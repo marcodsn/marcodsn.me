@@ -1,0 +1,9 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/colors';
+
+@mixin landing-page-background() {
+    background-color: colors.$gray-100; // $layer-selected-inverse; // $layer-01;
+    color: $layer-01;
+    position: relative;
+}
