@@ -1,0 +1,45 @@
+import React, { useState, useEffect } from 'react';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
+import rehypePrettyCode from 'rehype-pretty-code';
+
+
+interface CodeProps {
+    code: string;
+}
+
+const Code: React.FC<CodeProps> = ({ code }) => {
+    const [highlightedCode, setHighlightedCode] = useState('');
+
+    useEffect(() => {
+        highlightCode(code).then(setHighlightedCode);
+    }, [code]);
+
+    return (
+        <section className="p-1 my-4 bg-neutral-900 rounded-md"
+            style={{ width: 'fit-content' }}
+            dangerouslySetInnerHTML={{
+                __html: highlightedCode,
+            }}
+        />
+    );
+};
+
+async function highlightCode(code: string) {
+    const file = await unified()
+        .use(remarkParse)
+        .use(remarkRehype)
+        .use(rehypePrettyCode, {
+            // your configuration options here
+            theme: 'catppuccin-macchiato',
+            keepBackground: false,
+        })
+        .use(rehypeStringify)
+        .process(code);
+
+    return String(file);
+}
+
+export default Code;
