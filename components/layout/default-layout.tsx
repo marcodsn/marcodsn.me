@@ -17,7 +17,7 @@ interface MdxLayoutProps {
   children: React.ReactNode;
 }
 
-const MdxLayout = ({ children }: MdxLayoutProps) => {
+const DefaultLayout = ({ children }: MdxLayoutProps) => {
   return (
     <ThemeProvider
       attribute="class"
@@ -39,4 +39,4 @@ const MdxLayout = ({ children }: MdxLayoutProps) => {
   );
 };
 
-export default MdxLayout;
+export default DefaultLayout;

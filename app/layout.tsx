@@ -5,6 +5,7 @@ import './globals.css'
 import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/components/theme-provider'
 import Header from '@/components/layout/header'
+import Footer from '@/components/layout/footer'
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
           <div className="container flex min-h-screen flex-col py-4 md:w-[45rem] md:py-8">
             <Header />
             {children}
+            <Footer />
           </div>
         </ThemeProvider>
       </body>

@@ -16,7 +16,7 @@ const config: AppConfig = {
   brandName: "marcodsn",
   socialLinks: {
     github: "https://github.com/marcodsn",
-    twitter: "https://twitter.com/marcodsn",
+    twitter: "https://twitter.com/marcodsn_",
     discord: "https://discord.com/invite/invitecode",
     // linkedin: "https://linkedin.com/in/yourusername", // Uncomment if needed
     // ... other links

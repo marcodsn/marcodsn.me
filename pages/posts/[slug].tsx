@@ -6,7 +6,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
 // import RootLayout from '@/app/layout';
-import MdxLayout from '@/components/blog/mdx-layout';
+import DefaultLayout from '@/components/layout/default-layout';
 import CodeBlock from '@/components/code-block';
 import Code from '@/components/code';
 import InlineCode from '@/components/inline-code';
@@ -14,7 +14,7 @@ import CustomCodeBlock from '@/components/code-block-wrapper';
 import '@/app/globals.css';
 import './mdx-style.css';
 import rehypePrettyCode from 'rehype-pretty-code';
-import { Pluggable } from 'unified';
+
 
 // Define readFileContent function
 const readFileContent = (slug: string): string => {
@@ -72,25 +72,30 @@ interface PostPageProps {
 const PostPage: NextPage<PostPageProps> = ({ source, frontmatter }) => {
     // Define or import Layout and FormattedDate components
     return (
-        <MdxLayout>
+        <DefaultLayout>
             <div className='my-5'>
+                <div className='p-4 bg-warning outline outline-1 outline-warning-foreground rounded-md mb-4'>
+                    <p className='text-sm text-warning-foreground'>DISCLAIMER: The content in this post is AI generated.</p>
+                </div>
                 <p className='text-muted-foreground text-sm my-2'>
                     Published on {frontmatter.date}
                 </p>
-                <h1 className='text-5xl font-bold mb-8'>{frontmatter.title}</h1>
-                <Image
-                    src={frontmatter.thumbnail}
-                    alt={frontmatter.thumbnail}
-                    width={1920}
-                    height={1080}
-                    className='rounded-md mb-6'
-                />
+                <h1 className='text-4xl md:text-5xl font-bold mb-8'>{frontmatter.title}</h1>
+                {frontmatter.thumbnail && (
+                    <Image
+                        src={frontmatter.thumbnail}
+                        alt={frontmatter.thumbnail}
+                        width={1920}
+                        height={1080}
+                        className='rounded-md mb-6'
+                    />
+                )}
                 <div className='mdx'>
                     <MDXRemote {...source} components={components} />
                 </div>
 
             </div>
-        </MdxLayout>
+        </DefaultLayout>
     );
 };
 
