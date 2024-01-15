@@ -6,8 +6,6 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
 import DefaultLayout from '@/components/layout/default-layout';
-import CodeBlock from '@/components/code-block';
-import Code from '@/components/code';
 import InlineCode from '@/components/inline-code';
 import CustomCodeBlock from '@/components/code-block-wrapper';
 import '@/app/globals.css';
@@ -51,8 +49,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 // Define components
 const components: any = {
-    Code,
-    CodeBlock,
+    // Code,
+    // CodeBlock,
     InlineCode,
     code: CustomCodeBlock,
 };
@@ -64,6 +62,7 @@ interface PostPageProps {
         title: string;
         date: string; // Adjust the type based on your date format
         thumbnail: string;
+        author: string;
     };
 }
 
@@ -72,9 +71,11 @@ const PostPage: NextPage<PostPageProps> = ({ source, frontmatter }) => {
     return (
         <DefaultLayout>
             <div className='my-5 md:mb-12'>
-                <div className='p-4 bg-warning outline outline-1 outline-warning-foreground rounded-md mb-4'>
-                    <p className='text-sm text-warning-foreground'>DISCLAIMER: The content in this post is AI generated.</p>
-                </div>
+                {frontmatter.author === "Muishiki" && (
+                    <div className='p-4 bg-warning outline outline-1 outline-warning-foreground rounded-md mb-4'>
+                        <p className='text-sm text-warning-foreground'>DISCLAIMER: The content in this post is AI generated.</p>
+                    </div>
+                )}
                 <p className='text-muted-foreground text-sm my-2'>
                     Published on {frontmatter.date}
                 </p>
