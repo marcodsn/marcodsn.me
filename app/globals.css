@@ -82,3 +82,47 @@
     @apply bg-background text-foreground;
   }
 }
+
+.mdx {
+  @apply scroll-m-20 font-normal focus:outline-accent-foreground;
+}
+
+.mdx h1 {
+  @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+}
+
+.mdx h2 {
+  @apply mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+}
+
+.mdx h3 {
+  @apply mt-6 scroll-m-20 text-2xl font-semibold tracking-tight;
+}
+
+.mdx h4 {
+  @apply mt-6 scroll-m-20 text-xl font-semibold tracking-tight;
+}
+
+.mdx p {
+  @apply leading-7 [&:not(:first-child)]:mt-6;
+}
+
+.mdx blockquote {
+  @apply mt-6 border-l-2 pl-6 italic;
+}
+
+.mdx a {
+  @apply font-semibold underline transition-colors focus:outline-accent-foreground;
+}
+
+.mdx a:hover {
+  @apply text-neutral-500 dark:text-neutral-400;
+}
+
+.mdx ul {
+  @apply my-6 ml-6 list-disc [&>li]:mt-2;
+}
+
+.mdx ol {
+  @apply my-6 ml-6 list-decimal [&>li]:mt-2;
+}

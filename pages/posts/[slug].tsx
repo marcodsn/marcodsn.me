@@ -5,14 +5,12 @@ import Image from 'next/image';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
-// import RootLayout from '@/app/layout';
 import DefaultLayout from '@/components/layout/default-layout';
 import CodeBlock from '@/components/code-block';
 import Code from '@/components/code';
 import InlineCode from '@/components/inline-code';
 import CustomCodeBlock from '@/components/code-block-wrapper';
 import '@/app/globals.css';
-import './mdx-style.css';
 import rehypePrettyCode from 'rehype-pretty-code';
 
 
@@ -73,7 +71,7 @@ const PostPage: NextPage<PostPageProps> = ({ source, frontmatter }) => {
     // Define or import Layout and FormattedDate components
     return (
         <DefaultLayout>
-            <div className='my-5'>
+            <div className='my-5 md:mb-12'>
                 <div className='p-4 bg-warning outline outline-1 outline-warning-foreground rounded-md mb-4'>
                     <p className='text-sm text-warning-foreground'>DISCLAIMER: The content in this post is AI generated.</p>
                 </div>
