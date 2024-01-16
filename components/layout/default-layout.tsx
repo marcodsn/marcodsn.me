@@ -13,11 +13,12 @@ export const fontSans = FontSans({
 });
 
 // Define children
-interface MdxLayoutProps {
+interface LayoutProps {
   children: React.ReactNode;
 }
 
-const DefaultLayout = ({ children }: MdxLayoutProps) => {
+// const DefaultLayout = ({ children }: LayoutProps) => {
+export default function DefaultLayout({ children }: LayoutProps) {
   return (
     <ThemeProvider
       attribute="class"
@@ -29,7 +30,7 @@ const DefaultLayout = ({ children }: MdxLayoutProps) => {
         "min-h-screen bg-background font-sans antialiased",
         fontSans.variable
       )}>
-        <div className="container flex min-h-screen flex-col py-4 md:w-[45rem] md:py-8">
+        <div className="container flex min-h-screen flex-col md:w-[45rem] p-4 md:p-8">
           <Header />
           {children}
           <Footer />
@@ -39,4 +40,4 @@ const DefaultLayout = ({ children }: MdxLayoutProps) => {
   );
 };
 
-export default DefaultLayout;
+// export default DefaultLayout;

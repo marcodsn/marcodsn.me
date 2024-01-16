@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
 
 import { SocialMediaIcons } from "@/components/social-media-icons"
-import { LatestPosts } from "@/components/blog/latest-posts"
+import { ListPosts } from "@/components/blog/list-posts"
 import DefaultLayout from '@/components/layout/default-layout';
 
 
@@ -23,25 +23,23 @@ type Post = {
 export default function Home({ latestPosts }: { latestPosts: Post[] }) {
     return (
         <DefaultLayout>
-            <main>
-                <div className="">
-                    <p className="my-5">
-                        Hey there. Welcome to my brain dump—a place where I offload insights and musings on all things computer science.
+            <div className="">
+                <p className="my-5">
+                    Hey there. Welcome to my brain dump—a place where I offload insights and musings on all things computer science.
+                </p>
+                <div className="my-5">
+                    <SocialMediaIcons />
+                </div>
+                {/* <div className="h-px w-full bg-accent rounded-full" /> */}
+                <div className="mt-10">
+                    <p>
+                        <span className="text-lg font-bold">Latest Posts</span>
                     </p>
-                    <div className="my-5">
-                        <SocialMediaIcons />
-                    </div>
-                    {/* <div className="h-px w-full bg-accent rounded-full" /> */}
-                    <div className="mt-10">
-                        <p>
-                            <span className="text-lg font-bold">Latest Posts</span>
-                        </p>
-                        <div className="mb-5">
-                            <LatestPosts posts={latestPosts} />
-                        </div>
+                    <div className="mb-5">
+                        <ListPosts posts={latestPosts} />
                     </div>
                 </div>
-            </main>
+            </div>
         </DefaultLayout>
     )
 }

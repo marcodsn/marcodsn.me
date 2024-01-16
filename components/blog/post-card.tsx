@@ -93,7 +93,7 @@ export const PostCard: React.FC<CardProps> = ({
                     </CardContent>
                 </Card>
             </a>
-            <div className="h-px w-full bg-accent rounded-full md:hidden" />
+            <div className="h-px w-full bg-muted rounded-full md:hidden" />  {/* or bg-accent */}
         </div>
     );
 }

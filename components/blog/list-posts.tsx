@@ -1,4 +1,4 @@
-// LatestPosts.tsx
+// ListPosts component
 import React from 'react';
 import { PostCard } from "@/components/blog/post-card";
 
@@ -11,7 +11,7 @@ type Post = {
     author: string;
 };
 
-export const LatestPosts = ({ posts }: { posts: Post[] }) => {
+export const ListPosts = ({ posts }: { posts: Post[] }) => {
     return (
         <div>
             {posts.map((post: Post) => (
