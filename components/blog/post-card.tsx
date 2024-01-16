@@ -68,7 +68,7 @@ export const PostCard: React.FC<CardProps> = ({
             {/* <div className="h-px w-full bg-accent rounded-full" /> */}
             <a href={`/posts/${fileName}`} className="focus:outline-accent-foreground">
                 <Card className={`shadow-none md:shadow-sm border-0 md:border md:mt-4 ${className}`}>
-                    <CardContent className="m-0 md:m-2 p-0 pb-4 md:p-8 md:pt-0">  {/* or md:p-6 md:pt-0 */}
+                    <CardContent className="m-0 md:m-2 p-0 pb-4 md:p-6 md:pt-0">  {/* or md:p-6 md:pt-0 */}
                         <div className="py-4 flex flex-row justify-between items-center">
                             <p className='text-muted-foreground text-sm md:py-2'>
                                 {/* {formatDate(date)} */}

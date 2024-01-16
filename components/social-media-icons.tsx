@@ -1,4 +1,4 @@
-import { FaTwitter, FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa"
+import { FaTwitter, FaGithub, FaDiscord, FaInstagram } from "react-icons/fa"
 import AppConfig from "@/app/config"
 
 // Define an array of social media platforms
@@ -12,6 +12,11 @@ const socialMediaLinks = [
       name: 'Discord',
       icon: <FaDiscord />,
       url: AppConfig.socialLinks.discord
+    },
+    {
+      name: 'Instagram',
+      icon: <FaInstagram />,
+      url: AppConfig.socialLinks.instagram
     },
     {
       name: 'Twitter',

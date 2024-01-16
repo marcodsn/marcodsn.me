@@ -10,6 +10,7 @@ import InlineCode from '@/components/inline-code';
 import CustomCodeBlock from '@/components/code-block-wrapper';
 import '@/app/globals.css';
 import rehypePrettyCode from 'rehype-pretty-code';
+import AppConfig from "@/app/config"
 
 
 // Define readFileContent function
@@ -49,10 +50,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 // Define components
 const components: any = {
-    // Code,
-    // CodeBlock,
+    Image,
     InlineCode,
     code: CustomCodeBlock,
+    img: (props: any) => <Image width={1920} height={1080} className='rounded-md my-6' {...props} />,
 };
 
 // Define PostPage component
@@ -71,7 +72,7 @@ const PostPage: NextPage<PostPageProps> = ({ source, frontmatter }) => {
     return (
         <DefaultLayout>
             <div className='my-5 md:mb-12'>
-                {frontmatter.author === "Muishiki" && (
+                {frontmatter.author === AppConfig.AIWriterKey && (
                     <div className='p-4 bg-warning outline outline-1 outline-warning-foreground rounded-md mb-4'>
                         <p className='text-sm text-warning-foreground'>DISCLAIMER: The content in this post is AI generated.</p>
                     </div>
