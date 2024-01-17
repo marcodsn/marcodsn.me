@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
+import Link from "next/link"
 
 import { SocialMediaIcons } from "@/components/social-media-icons"
 import { ListPosts } from "@/components/blog/list-posts"
@@ -37,6 +38,11 @@ export default function Home({ latestPosts }: { latestPosts: Post[] }) {
                     </p>
                     <div className="mb-5">
                         <ListPosts posts={latestPosts} />
+                    </div>
+                    <div className="flex justify-center mb-8">
+                        <Link href="/posts" className="p-3 rounded-md hover:bg-accent transition">
+                            <span className="text-sm font-medium">View all posts</span>
+                        </Link>
                     </div>
                 </div>
             </div>

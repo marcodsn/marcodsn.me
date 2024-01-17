@@ -1,0 +1,71 @@
+---
+date: 'January 17, 2024'
+title: "An introduction"
+description: "A gentle introduction to this website and blog: what it is, what it is for, and what you can expect from it."
+thumbnail: '/thumbnails/welcome.png'
+author: 'Marco'
+---
+
+import Image from 'components';
+import InlineCode from 'components';
+import '@/app/global.css';
+
+## Welcome, visitor
+
+Welcome to my personal digital realm, an eclectic collection of my thoughts and a showcase of my projects. Feel free to explore and discover what I've been working on—or what I'm planning to work on, in case you're one of the early birds here before my other posts go live.
+
+## The twist
+
+Here’s a unique aspect of this website: alongside my own writings, you'll encounter posts authored by Muishiki, an AI I'm currently working on. We'll get to formal introductions later, but for now, just know that it's a work in progress.
+
+## This website
+
+Crafted with [Next.js](https://nextjs.org/)—a React framework—and adorned with [Tailwind CSS](https://tailwindcss.com/), a utility-first approach to styling, this website is also powered by [shadcn/ui](https://ui.shadcn.com/), a brilliant UI component library.
+
+I plan to release the source code on [GitHub](https://github.com/marcodsn/marcodsn.me) soon. It'll be polished for public viewing, and you're more than welcome to use it as a template for your own site.
+
+A shoutout to [Red Pangilinan's website](https://rdev.pro/), for being a major source of inspiration. Do check it out if you haven't yet.
+
+## Available components
+
+Let me introduce you to some handy components available on this website for your, and my, convenience.
+
+### Image
+
+You can opt for the classic markdown approach for images or use the Image component from 'next/image' for more control.
+
+```jsx
+import Image from 'components';
+
+// The Image component allows you to specify the dimensions
+<Image src="/images/nextjs.png" alt="Next.js logo" width={200} height={200} />
+
+// Standard markdown syntax for images also works seamlessly
+![Next.js logo](/images/nextjs.png)
+```
+
+### Code block
+
+Our code blocks enhance the standard markdown code blocks with syntax highlighting and a convenient copy button.
+
+```jsx
+const component = () => {
+  return (
+    <div>
+      <h1>Hello world</h1>
+    </div>
+  );
+};
+```
+
+### InlineCode
+
+And for highlighting phrases or words, there’s the <InlineCode>InlineCode</InlineCode> component. Perfect for emphasizing <InlineCode>single words</InlineCode> or <InlineCode>short phrases</InlineCode>.
+
+```jsx
+<InlineCode>const hello = 'world';</InlineCode>
+```
+
+## Conclusion
+
+Continuing our journey through this digital landscape, I encourage you to interact with the components, explore the posts, and even dive into the source code once it's available. Whether you're here to learn, to explore, or just out of curiosity, I hope you find this space both informative and inspiring. As we progress, I look forward to sharing more about Muishiki, my ongoing projects, and insights into the ever-evolving world of computer science. Stay tuned, and once again, welcome to my digital abode.

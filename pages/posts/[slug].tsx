@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { GetStaticProps, GetStaticPaths, NextPage } from 'next';
+import Link from "next/link"
 import Image from 'next/image';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
@@ -74,7 +75,7 @@ const PostPage: NextPage<PostPageProps> = ({ source, frontmatter }) => {
             <div className='my-5 md:mb-12'>
                 {frontmatter.author === AppConfig.AIWriterKey && (
                     <div className='p-4 bg-warning outline outline-1 outline-warning-foreground rounded-md mb-4'>
-                        <p className='text-sm text-warning-foreground'>DISCLAIMER: The content in this post is AI generated.</p>
+                        <p className='text-sm text-warning-foreground'>DISCLAIMER: The content of this post is AI generated.</p>
                     </div>
                 )}
                 <p className='text-muted-foreground text-sm my-2'>
@@ -93,7 +94,12 @@ const PostPage: NextPage<PostPageProps> = ({ source, frontmatter }) => {
                 <div className='mdx'>
                     <MDXRemote {...source} components={components} />
                 </div>
-
+                <div className="h-px w-full bg-muted rounded-full mt-12" />
+                <div className="flex justify-center mt-4">
+                    <Link href="/posts" className="p-3 rounded-md hover:bg-accent transition">
+                        <span className="text-sm font-medium">View all posts</span>
+                    </Link>
+                </div>
             </div>
         </DefaultLayout>
     );
