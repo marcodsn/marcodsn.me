@@ -17,7 +17,6 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-// const DefaultLayout = ({ children }: LayoutProps) => {
 export default function DefaultLayout({ children }: LayoutProps) {
   return (
     <ThemeProvider
@@ -30,7 +29,7 @@ export default function DefaultLayout({ children }: LayoutProps) {
         "min-h-screen bg-background font-sans antialiased",
         fontSans.variable
       )}>
-        <div className="container flex min-h-screen flex-col md:w-[45rem] p-4 md:p-8">
+        <div className="container flex min-h-screen flex-col md:w-[45rem] p-4 md:p-8" suppressHydrationWarning>
           <Header />
           {children}
           <Footer />
@@ -39,5 +38,3 @@ export default function DefaultLayout({ children }: LayoutProps) {
     </ThemeProvider>
   );
 };
-
-// export default DefaultLayout;

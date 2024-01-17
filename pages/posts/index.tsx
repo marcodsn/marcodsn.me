@@ -3,6 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { GetStaticProps } from 'next';
 import { useState } from 'react';
+import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"
 
 import { ListPosts } from "@/components/blog/list-posts"
 import DefaultLayout from '@/components/layout/default-layout';
@@ -59,6 +60,7 @@ type Post = {
 };
 
 const Posts = ({ posts }: { posts: Post[] }) => {
+    const numberOfPosts = posts.length;
     const postsPerPage = 3;
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -66,20 +68,42 @@ const Posts = ({ posts }: { posts: Post[] }) => {
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
+    const handleNextPage = () => {
+        setCurrentPage(currentPage + 1);
+    }
+
+    const handlePreviousPage = () => {
+        setCurrentPage(currentPage - 1);
+    }
+
+    const nextButtonVisibility = () => {
+        if (indexOfLastPost >= numberOfPosts) {
+            return 'hidden';
+        } else {
+            return 'visible';
+        }
+    }
+
+    const previousButtonVisibility = () => {
+        if (currentPage === 1) {
+            return 'hidden';
+        } else {
+            return 'visible';
+        }
+    }
+
     // Simplified version: Render static content or a subset of posts
     return (
         <DefaultLayout>
             <ListPosts posts={currentPosts} />
-            <Pagination>
-                <PaginationContent>
-                    <PaginationItem>
-                        <PaginationPrevious href="#" />
-                    </PaginationItem>
-                    <PaginationItem>
-                        <PaginationNext href="#" />
-                    </PaginationItem>
-                </PaginationContent>
-            </Pagination>
+            <div className="flex justify-center mt-2">
+                <button onClick={handlePreviousPage} className={`text-sm font-medium flex flex-row items-center gap-1 p-3 pr-4 rounded-md hover:bg-accent transition ${previousButtonVisibility()}`}>
+                    <ChevronLeft className="h-4 w-4" /> <span>Previous</span>
+                </button>
+                <button onClick={handleNextPage} className={`text-sm font-medium flex flex-row items-center gap-1 p-3 pl-4 rounded-md hover:bg-accent transition ${nextButtonVisibility()}`}>
+                    <span>Next</span> <ChevronRight className="h-4 w-4" />
+                </button>
+            </div>
         </DefaultLayout>
     );
 };
