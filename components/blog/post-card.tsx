@@ -54,6 +54,7 @@ interface CardProps {
     className?: string;
 }
 
+// Date on top
 export const PostCard: React.FC<CardProps> = ({
     fileName,
     date,
@@ -68,8 +69,8 @@ export const PostCard: React.FC<CardProps> = ({
             {/* <div className="h-px w-full bg-accent rounded-full" /> */}
             <a href={`/posts/${fileName}`} className="focus:outline-accent-foreground">
                 <Card className={`shadow-none md:shadow-sm border-0 md:border md:mt-4 ${className}`}>
-                    <CardContent className="m-0 md:m-2 p-0 pb-4 md:p-6 md:pt-0">  {/* or md:p-6 md:pt-0 */}
-                        <div className="py-4 flex flex-row justify-between items-center">
+                    <CardContent className="m-0 md:m-2 p-0 pb-2 md:p-6 md:pt-0">  {/* or md:p-6 md:pt-0 */}
+                        <div className="py-4 pt-3 flex flex-row justify-between items-center">
                             <p className='text-muted-foreground text-sm md:py-2'>
                                 {/* {formatDate(date)} */}
                                 {date}
@@ -93,7 +94,51 @@ export const PostCard: React.FC<CardProps> = ({
                     </CardContent>
                 </Card>
             </a>
-            <div className="h-px w-full bg-muted rounded-full md:hidden" />  {/* or bg-accent */}
+            <div className="h-px w-full bg-muted rounded-full mb-4 md:hidden" />  {/* or bg-accent */}
         </div>
     );
 }
+
+// Date on bottom
+// export const PostCard: React.FC<CardProps> = ({
+//     fileName,
+//     date,
+//     title,
+//     description,
+//     thumbnail,
+//     author,
+//     className
+// }) => {
+//     return (
+//         <div>
+//             {/* <div className="h-px w-full bg-accent rounded-full" /> */}
+//             <a href={`/posts/${fileName}`} className="focus:outline-accent-foreground">
+//                 <Card className={`shadow-none md:shadow-sm border-0 md:border md:mt-4 ${className}`}>
+//                     <CardContent className="m-0 md:m-1 p-0 md:p-6 md:pt-0">  {/* or md:p-6 md:pt-0 */}
+//                         {thumbnail && (
+//                             <Image
+//                                 src={thumbnail}
+//                                 alt={title}
+//                                 width={1920}
+//                                 height={1080}
+//                                 className='rounded-md mt-7'
+//                                 priority={true}
+//                             />
+//                         )}
+//                         <CardTitle className='mb-4 mt-7'>{title}</CardTitle>
+//                         <CardDescription className='mb-0'>{description}</CardDescription>
+//                         <div className="pt-8 flex flex-row justify-between items-center">
+//                             <p className='text-muted-foreground text-sm'>
+//                                 {date}
+//                             </p>
+//                             <p className='text-muted-foreground text-sm'>
+//                                 By {author}
+//                             </p>
+//                         </div>
+//                     </CardContent>
+//                 </Card>
+//             </a>
+//             <div className="h-px w-full bg-muted rounded-full md:hidden" />  {/* or bg-accent */}
+//         </div>
+//     );
+// }

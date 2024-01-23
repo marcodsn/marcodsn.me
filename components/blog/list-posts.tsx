@@ -23,7 +23,7 @@ export const ListPosts = ({ posts }: { posts: Post[] }) => {
                     description={post.description}
                     thumbnail={post.thumbnail}
                     author={post.author}
-                    className="mb-5"
+                    className="mb-5 mt-2"
                 />
             ))}
         </div>

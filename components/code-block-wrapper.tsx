@@ -20,13 +20,6 @@ const CustomCodeBlock: React.FC<CustomCodeBlockProps> = ({ children, className }
         return '';
     };
 
-    // const handleCopy = () => {
-    //     const textToCopy = extractText(children);
-    //     navigator.clipboard.writeText(textToCopy);
-    //     setIsCopied(true);
-    //     setTimeout(() => setIsCopied(false), 1000); // Reset after 1 second
-    // };
-
     const handleCopy = () => {
         const textToCopy = extractText(children);
     
@@ -63,7 +56,7 @@ const CustomCodeBlock: React.FC<CustomCodeBlockProps> = ({ children, className }
     };    
 
     return (
-        <div className="relative group my-6 ring-1 pr-3 ring-neutral-800 rounded-md bg-neutral-900">
+        <div className="relative group my-6 mb-8 ring-1 ring-neutral-800 rounded-md bg-neutral-900" suppressHydrationWarning>
             <pre className={`p-4 rounded-md overflow-x-auto text-sm ${className}`}>{children}</pre>
             <button
                 onClick={handleCopy}

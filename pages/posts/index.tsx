@@ -86,7 +86,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
     return (
         <DefaultLayout>
             <ListPosts posts={currentPosts} />
-            <div className="flex justify-center mt-4 md:mt-0 mb-8">
+            <div className="flex justify-center mt-0 mb-8">
                 <button onClick={handlePreviousPage} className={`text-sm font-medium flex flex-row items-center gap-1 p-3 pr-4 rounded-md hover:bg-accent transition ${previousButtonVisibility()}`}>
                     <ChevronLeft className="h-4 w-4" /> <span>Previous</span>
                 </button>

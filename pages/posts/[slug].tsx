@@ -72,7 +72,7 @@ const PostPage: NextPage<PostPageProps> = ({ source, frontmatter }) => {
     // Define or import Layout and FormattedDate components
     return (
         <DefaultLayout>
-            <div className='my-5 md:mb-12'>
+            <div className='my-4 md:mb-12'>
                 {frontmatter.author === AppConfig.AIWriterKey && (
                     <div className='p-4 bg-warning outline outline-1 outline-warning-foreground rounded-md mb-4'>
                         <p className='text-sm text-warning-foreground'>DISCLAIMER: The content of this post is AI generated.</p>
