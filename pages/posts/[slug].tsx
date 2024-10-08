@@ -9,6 +9,8 @@ import matter from 'gray-matter';
 import DefaultLayout from '@/components/layout/default-layout';
 import InlineCode from '@/components/inline-code';
 import CustomCodeBlock from '@/components/code-block-wrapper';
+import AudioPlayer from '@/components/audio-player';
+
 import '@/app/globals.css';
 import rehypePrettyCode from 'rehype-pretty-code';
 import AppConfig from "@/app/config"
@@ -53,6 +55,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 const components: any = {
     Image,
     InlineCode,
+    AudioPlayer,
     code: CustomCodeBlock,
     img: (props: any) => <Image width={1920} height={1080} className='rounded-md my-6' {...props} />,
 };

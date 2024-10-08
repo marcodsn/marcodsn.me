@@ -38,3 +38,5 @@ next-env.d.ts
 # posts and thumbnails
 /posts/*
 /public/thumbnails/*
+/public/audios/*
+/public/images/*
