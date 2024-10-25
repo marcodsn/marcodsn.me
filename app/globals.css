@@ -5,13 +5,29 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --color-orange: #ff4400;
+  --color-silver: #C0C0C0;
+  --color-black: #000000;
+  --color-light-gray: #F5F5F5;
+  --color-muted-blue: #2f506b;
+  --color-muted-green: #556B2F;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme='dark'] {
+  --background:  #0a0a0a;
+  --foreground: #ededed;
+  --primary: hsl(210, 20%, 98%);
+  --primary-foreground: hsl(220.9, 39.3%, 11%);
+  /* Override for dark theme */
+}
+
+[data-theme='black'] {
+  /* Black theme variables */
+}
+
+[data-theme='custom'] {
+  /* Custom theme variables */
 }
 
 body {
