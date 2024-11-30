@@ -40,3 +40,7 @@ next-env.d.ts
 /public/thumbnails/*
 /public/audios/*
 /public/images/*
+
+# exceptions
+!welcome.mdx
+!welcome.png

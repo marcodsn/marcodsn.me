@@ -36,7 +36,7 @@ export const PostCard: React.FC<CardProps> = ({
         className="focus:outline-accent-foreground"
       >
         <Card
-          className={`shadow-none md:shadow-sm border-0 md:border md:mt-4 ${className}`}
+          className={`shadow-none md:shadow-sm border-0 md:border md:mt-4 rounded-xl ${className}`}
         >
           <CardContent className="m-0 md:m-2 p-0 pb-2 md:p-6 md:pt-0">
             {" "}
